@@ -20,11 +20,7 @@ public class PFController {
                             @RequestParam(name="kto", required=false, defaultValue="Liškovci") String kto,
                             @RequestParam(name="hard", required=false, defaultValue="") String hard,
                             Model model) {
-        if (hard.equals("true")) {
-            model.addAttribute("hard", "none");
-        } else {
-            model.addAttribute("hard", "block");
-        }
+        model.addAttribute("hard", hard);
         model.addAttribute("rok", rok);
         model.addAttribute("komu", komu);
         model.addAttribute("kto", kto);

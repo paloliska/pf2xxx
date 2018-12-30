@@ -54,7 +54,9 @@
                         pf_font,
                         function (str) {
                             console.log(str);
-                            $( '#asciiArt' ).html('<pre>' + str + '</pre>');
+                            if ('${hard}'.length < 1) {
+                                $('#asciiArt').html('<pre>' + str + '</pre>');
+                            }
                         }
                     )
                 }
