@@ -5,7 +5,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author pavol.liska
@@ -18,7 +17,7 @@ public class PFController {
     public String getPF2019(@RequestParam(name="komu", required=false, defaultValue="Vám") String komu,
                             @PathVariable(name="rok") String rok,
                             @RequestParam(name="kto", required=false, defaultValue="Liškovci") String kto,
-                            @RequestParam(name="hard", required=false, defaultValue="") String hard,
+                            @RequestParam(name="hard", required=false, defaultValue="false") String hard,
                             Model model) {
         model.addAttribute("hard", hard);
         model.addAttribute("rok", rok);

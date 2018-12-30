@@ -9,8 +9,10 @@
             body {
                 padding: 30px;
                 padding-top:5px;
+                border-bottom: 1em;
+                border-top: 1em;
                 font-family: Arial, Helvetica, sans-serif;
-                font-size: larger;
+                font-size: xx-large;
             }
             h1 {
                 margin-bottom: 1em;
@@ -28,7 +30,7 @@
             }
             a { color:#0000FF;}
             a.visited{ color:#0000FF;}
-            #asciiArt{ color:black; background-color:white; font-size: large}
+            #asciiArt{ color:black; background-color:white; font-size: x-large}
             .ninja{font-size:10px;}
         </style>
         <script type="text/javascript" th:src="@{/lib/asciimo.js}"></script>
@@ -37,7 +39,7 @@
         <script type="text/javascript">
             $( document ).ready(
                 function() {
-                    var pf = document.getElementById("pf").textContent
+                    var pf = document.getElementById("pf").textContent;
                     console.log(pf);
 
                     var pf_fonts = [
@@ -61,13 +63,17 @@
                     var font_index = Math.ceil(milis*pf_fonts.length/1000);
                     var pf_font = pf_fonts[font_index];
 
+                    var hard = document.getElementById("hard").textContent;
+
                     Figlet.write(
                         pf.substr(0, 7),
                         pf_font,
                         function (str) {
                             console.log(str);
-                            if ('${hard}'.length < 1) {
+                            if (hard == "false") {
                                 $('#asciiArt').html('<pre>' + str + '</pre>');
+                            } else {
+                                $('#pf').html('<p></p>')
                             }
                         }
                     )
@@ -81,6 +87,9 @@
         </div>
         <div id="asciiArt" class="box" align="center">
             <pre></pre>
+        </div>
+        <div hidden>
+            <p id="hard" th:text="${hard}"/>
         </div>
     </body>
 </html>
