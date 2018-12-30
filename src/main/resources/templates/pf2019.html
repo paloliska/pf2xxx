@@ -56,8 +56,9 @@
                     "tinker-toy",
                     "Weird"];
 
-                    //current time in nano ako random
-                    var font_index = Math.ceil(Math.random()*pf_fonts.length);
+                    var now = new Date();
+                    var milis = now.getMilliseconds();
+                    var font_index = Math.ceil(milis*pf_fonts.length/1000);
                     var pf_font = pf_fonts[font_index];
 
                     Figlet.write(
