@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>PF 2019!</title>
+        <title>Pour Féliciter</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
         <style type="text/css">
@@ -9,27 +9,15 @@
             body {
                 padding: 30px;
                 padding-top:5px;
+                border-top:1em;
+                border-bottom:1em;
                 font-family: Arial, Helvetica, sans-serif;
-                font-size: larger;
+                font-size: xx-large;
             }
-            h1 {
-                margin-bottom: 1em;
-                border-bottom: 1px solid #ccc;
-            }
-            h2 {
-                margin-bottom: 1em;
-                border-bottom: 1px solid #ccc;
-            }
-            h1 {
-                margin-bottom: 0.7em;
-            }
-            h2 {
-                margin-top: 1em;
-            }
-            a { color:#0000FF;}
-            a.visited{ color:#0000FF;}
-            #asciiArt{ color:black; background-color:white; font-size: large}
-            .ninja{font-size:10px;}
+            #asciiArt{
+                color:black;
+                background-color:white;
+                font-size: x-large}
         </style>
         <script type="text/javascript" th:src="@{/lib/asciimo.js}"></script>
         <script type="text/javascript" th:src="@{/lib/fonts.js}"></script>
@@ -62,7 +50,7 @@
                     var pf_font = pf_fonts[font_index];
 
                     Figlet.write(
-                        pf.substr(0, 7),
+                        pf.substr(0, 9),
                         pf_font,
                         function (str) {
                             console.log(str);
@@ -75,7 +63,7 @@
     </head>
     <body>
         <div>
-            <p align="center" id="pf" th:text="'PF ' + ${rok} + ' ' + ${komu} + ' prajú ' + ${kto} + '!'"/>
+            <p align="center" id="pf" th:text="'P.F. ' + ${rok} + ' ' + ${komu} + ' prajú ' + ${kto} + '!'"/>
         </div>
         <div id="asciiArt" class="box" align="center">
             <pre></pre>
