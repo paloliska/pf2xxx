@@ -16,7 +16,7 @@ public class PFController {
     @GetMapping("/pf/{rok}")
     public String getPF2019(@RequestParam(name="komu", required=false, defaultValue="Vám") String komu,
                             @PathVariable(name="rok") String rok,
-                            @RequestParam(name="kto", required=false, defaultValue="Liškovci") String kto,
+                            @RequestParam(name="kto", required=false, defaultValue="rodina Lišková") String kto,
                             @RequestParam(name="hard", required=false, defaultValue="false") String hard,
                             Model model) {
         model.addAttribute("hard", hard);
